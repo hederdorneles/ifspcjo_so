@@ -6,6 +6,13 @@
 Repositório da disciplina de sistemas operacionais
 
 
+## Compilando e executando
+Compilação padrão usando gcc em ambiente Unix like.
+```
+$ gcc -o exe fonte.c
+$ ./exe
+```
+
 ## ✔️ Técnicas e tecnologias utilizadas
 
 - ``Linguagem C``
