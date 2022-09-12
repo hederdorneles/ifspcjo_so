@@ -1,6 +1,6 @@
 /*
  Um padrão comum para executar um subprograma dentro de 
- um programa é primeiro far o fork do processo e depois 
+ um programa é primeiro fazer o fork do processo e depois 
  executar o subprograma. Isso permite que o programa 
  chamador continue a execução no processo pai enquanto 
  o programa chamador é substituído pelo subprograma no 
