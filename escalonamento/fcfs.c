@@ -3,8 +3,6 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
 
 // Process structure
 typedef struct process
