@@ -8,8 +8,7 @@
 #define COLUMNS 50
 
 // Function to print the matrix
-void print_matrix(char matrix[ROWS][COLUMNS])
-{
+void print_matrix(char matrix[ROWS][COLUMNS]) {
     int i, j;
     for (i = 0; i < ROWS; i++) {
         for (j = 0; j < COLUMNS; j++) {
@@ -23,8 +22,7 @@ void print_matrix(char matrix[ROWS][COLUMNS])
 void update_matrix(char matrix[ROWS][COLUMNS]) {
     int i, j;
     // Shift all characters up by one row
-    for (i = 0; i < ROWS - 1; i++)
-    {
+    for (i = 0; i < ROWS - 1; i++) {
         for (j = 0; j < COLUMNS; j++)
         {
             matrix[i][j] = matrix[i + 1][j];
@@ -32,8 +30,7 @@ void update_matrix(char matrix[ROWS][COLUMNS]) {
     }
 
     // Generate new characters for the bottom row
-    for (j = 0; j < COLUMNS; j++)
-    {
+    for (j = 0; j < COLUMNS; j++) {
         matrix[ROWS - 1][j] = rand() % 94 + 33; // Generate a random ASCII character between '!' and '~'
     }
 }
@@ -44,8 +41,7 @@ int main() {
     char matrix[ROWS][COLUMNS];
     int i, j;
     for (i = 0; i < ROWS; i++) {
-        for (j = 0; j < COLUMNS; j++)
-        {
+        for (j = 0; j < COLUMNS; j++) {
             matrix[i][j] = ' ';
         }
     }
@@ -56,6 +52,6 @@ int main() {
         update_matrix(matrix);
         usleep(100000); // Sleep for 100ms to slow down the rain
     }
-
+    
     return 0;
 }
