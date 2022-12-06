@@ -1,3 +1,7 @@
+/*
+ * Simulador matrix rain.
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -23,8 +27,7 @@ void update_matrix(char matrix[ROWS][COLUMNS]) {
     int i, j;
     // Shift all characters up by one row
     for (i = 0; i < ROWS - 1; i++) {
-        for (j = 0; j < COLUMNS; j++)
-        {
+        for (j = 0; j < COLUMNS; j++) {
             matrix[i][j] = matrix[i + 1][j];
         }
     }
