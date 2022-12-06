@@ -62,8 +62,7 @@ int main(void) {
     printf("|");
     for (int i = 0; i < num_processes; i++) {
         process* p = &processes[i];
-        for (int j = 0; j < p->burst; j++)
-        {
+        for (int j = 0; j < p->burst; j++) {
             printf("-");
         }
         printf("P%d", p->id);
