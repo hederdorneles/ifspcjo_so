@@ -5,8 +5,7 @@
 #include <stdio.h>
 
 // Process structure
-typedef struct process
-{
+typedef struct process {
     int id;         // Process ID
     int arrival;    // Arrival time
     int burst;      // CPU burst time
