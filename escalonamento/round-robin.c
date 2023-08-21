@@ -10,6 +10,7 @@ typedef struct {
     int finish_time;
     int turnaround_time;
     float normalized_time;
+    int arrival_time;
 } Process;
 
 void runRoundRobin(Process processes[], int num_processes, int quantum) {
@@ -65,8 +66,8 @@ int main(int argc, char *argv[]) {
 
     Process processes[MAX_PROCESSES];
     for (int i = 0; i < num_processes; i++) {
-        printf("Digite o tempo de burst para o processo %d: ", i + 1);
-        scanf("%d", &processes[i].burst_time);
+        printf("Digite o tempo de chegada e o tempo de burst para o processo %d (Ex. X Y): ", i + 1);
+        scanf("%d %d", &processes[i].arrival_time, &processes[i].burst_time);
 
         processes[i].id = i + 1;
         processes[i].remaining_time = processes[i].burst_time;
@@ -78,11 +79,11 @@ int main(int argc, char *argv[]) {
     runRoundRobin(processes, num_processes, quantum);
 
     printf("\nTabela de Resultados:\n");
-    printf("ID | Tempo de Término | Turnaround Time | Tempo Normalizado\n");
-    printf("------------------------------------------------------\n");
+    printf("ID | Tempo de Chegada | Tempo de Término | Turnaround Time | Tempo Normalizado\n");
+    printf("--------------------------------------------------------------------------\n");
     for (int i = 0; i < num_processes; i++) {
-        printf("%2d |        %2d        |        %2d        |       %.2f\n", 
-               processes[i].id, processes[i].finish_time, processes[i].turnaround_time, processes[i].normalized_time);
+        printf("%2d |        %2d        |        %2d        |        %2d        |       %.2f\n", 
+               processes[i].id, processes[i].arrival_time, processes[i].finish_time, processes[i].turnaround_time, processes[i].normalized_time);
     }
 
     return 0;
